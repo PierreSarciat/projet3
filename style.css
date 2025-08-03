@@ -233,6 +233,11 @@ li:hover {
 	border-color: #1D6154;
 }
 
+button {
+  all: unset; 
+  cursor: pointer;
+}
+
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;

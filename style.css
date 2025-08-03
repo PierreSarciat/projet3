@@ -229,6 +229,8 @@ li:hover {
 	border: 1px solid #D9D9D9;
 	padding: 13px;
 	border-radius: 20px;
+	color: #1D6154;
+	border-color: #1D6154;
 }
 
 #portfolio h2 {

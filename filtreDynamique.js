@@ -1,3 +1,8 @@
+
+
+/**********Chargement des catégories,création des boutons et injection dans HTML***************************************/
+
+
 fetch("http://localhost:5678/api/categories")
     .then(res => res.json())
     .then(data => {
@@ -8,17 +13,24 @@ fetch("http://localhost:5678/api/categories")
 
         document.querySelector(".filtre ul").innerHTML = display;
 
+
+/********************Ajout d' un écouteur d' évènement click****************************************************** */
+
         const boutons = document.querySelectorAll(".bouton");
 
         boutons.forEach(bouton => {
             bouton.addEventListener("click", () => {
-                const categoryId = bouton.dataset.id; // type string
+                const categoryId = bouton.dataset.id; 
                 console.log("Filtrage pour categoryId :", categoryId);
+
+
+
+/************************Filtrage dynamique****************************************************************** */
 
                 const figures = document.querySelectorAll(".gallery figure");
 
                 figures.forEach(figure => {
-                    const projetCategoryId = figure.dataset.categoryId; // aussi string
+                    const projetCategoryId = figure.dataset.categoryId; 
 
                     if (categoryId === "0" || projetCategoryId === categoryId) {
                         figure.style.display = "block";
@@ -31,22 +43,3 @@ fetch("http://localhost:5678/api/categories")
     })
     .catch(err => console.log("Erreur chargement filtres :", err));
 
-// --- Chargement direct des projets ---
-
-
-fetch("http://localhost:5678/api/works")
-    .then(res => res.json())
-    .then(data => {
-        let display = "";
-
-        for (let figure of data) {
-            display += `
-        <figure data-category-id="${figure.categoryId}">
-            <img src="${figure.imageUrl}" alt="${figure.title}">
-            <figcaption>${figure.title}</figcaption>
-        </figure>`;
-        }
-
-        document.querySelector(".gallery").innerHTML = display;
-    })
-    .catch(err => console.log("Erreur chargement projets :", err));

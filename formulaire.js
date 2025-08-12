@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+
     let Bouton = document.querySelector("button");
 
     Bouton.addEventListener("click", (event) => {
@@ -10,6 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("E-mail :", email);
         console.log("Mot de passe :", password);
     });
-});
+
 
 

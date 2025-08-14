@@ -1,15 +1,38 @@
 
-    let Bouton = document.querySelector("button");
+   let bouton = document.querySelector("button");
 
-    Bouton.addEventListener("click", (event) => {
-        event.preventDefault(); 
+bouton.addEventListener("click", (event) => {
+    event.preventDefault(); // empêche le rechargement
 
-        let email = document.getElementById("email").value;
-        let password = document.getElementById("password").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
 
-        console.log("E-mail :", email);
-        console.log("Mot de passe :", password);
+    console.log("E-mail :", email);
+    console.log("Mot de passe :", password);
+
+    const dataConnexion = {
+        email: email,       // ✅ maintenant on envoie "email"
+        password: password
+    };
+
+    fetch("http://localhost:5678/api/users/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dataConnexion)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Erreur réseau ou identifiants incorrects");
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Connexion réussie :", data);
+    })
+    .catch(error => {
+        console.error("Erreur lors de la connexion :", error);
     });
-
-
+});
 

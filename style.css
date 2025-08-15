@@ -241,6 +241,42 @@ li a:hover{
 	border-color: #1D6154;
 }
 
+
+/************fenetre modale*******************/
+
+.modal {
+  display: none; /* cachée par défaut */
+  position: fixed;
+  inset: 0; /* occupe tout l’écran */
+  background: rgba(0,0,0,0.5); /* fond assombri */
+  z-index: 1000; /* toujours au-dessus */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenu de la modale */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 630px;
+  height: 688px;
+  max-width: 90%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+/* Bouton de fermeture */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+
 button {
 	all: unset;
 	cursor: pointer;
@@ -341,7 +377,7 @@ footer nav ul {
 
 #message-erreur{
 	color: red;
-	margin: 10px;
+	
 }
 
 

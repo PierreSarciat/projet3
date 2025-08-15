@@ -1,5 +1,5 @@
 
-   let bouton = document.querySelector("button");
+let bouton = document.querySelector("button");
 
 bouton.addEventListener("click", (event) => {
     event.preventDefault(); // empêche le rechargement
@@ -22,17 +22,25 @@ bouton.addEventListener("click", (event) => {
         },
         body: JSON.stringify(dataConnexion)
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Erreur réseau ou identifiants incorrects");
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log("Connexion réussie :", data);
-    })
-    .catch(error => {
-        console.error("Erreur lors de la connexion :", error);
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erreur réseau ou identifiants incorrects");
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Connexion réussie :", data);
+            localStorage.setItem("token", data.token);
+
+            // Redirection vers index.html
+            window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error("Erreur lors de la connexion :", error);
+            let erreurMessage=document.getElementById("message-erreur");
+            erreurMessage.textContent="E-mail ou mot de passe incorrect";
+            
+
+        });
 });
 

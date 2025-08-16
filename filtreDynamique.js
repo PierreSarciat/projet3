@@ -43,3 +43,47 @@ fetch("http://localhost:5678/api/categories")
     })
     .catch(err => console.log("Erreur chargement filtres :", err));
 
+
+/*******************************Chargement et affichage direct des projets  avant de commencer à filtrer*******************/
+
+
+ fetch("http://localhost:5678/api/works")
+    .then(res => res.json())
+    .then(data => {
+        let display = "";
+
+        for (let figure of data) {
+            display += `
+        <figure data-category-id="${figure.categoryId}">
+            <img src="${figure.imageUrl}" alt="${figure.title}">
+            <figcaption>${figure.title}</figcaption>
+        </figure>`;
+        }
+
+        document.querySelector(".gallery").innerHTML = display;
+    })
+    .catch(err => console.log("Erreur chargement projets :", err));
+
+
+
+    /***************Chargement et affichage direct des projets dans la fenêtre modale*********************************** */
+
+
+     fetch("http://localhost:5678/api/works")
+    .then(res => res.json())
+    .then(data => {
+        let display ="";
+
+        for (let figure of data) {
+            display += `
+        <figure data-category-id="${figure.categoryId}">
+            <img src="${figure.imageUrl}" alt="${figure.title}"><i class="fa-solid fa-trash-can delete-icon"></i>
+            
+        </figure>`;
+        }
+console.log(display);
+        document.querySelector(".galleryModal").innerHTML = display;
+    })
+    .catch(err => console.log("Erreur chargement projets :", err));
+
+

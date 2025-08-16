@@ -295,9 +295,39 @@ button {
 	grid-row-gap: 20px;
 }
 
-.gallery img {
+.galleryModal{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+grid-column-gap:10px;
+grid-row-gap: 25px;
+padding: 70px;
+}
+
+.gallery img, .galleryModal img {
 	width: 100%;
 
+}
+
+.galleryModal img{
+	display: block;
+	
+}
+
+.galleryModal figure{
+	position: relative;
+	display: inline-block;
+}
+
+.galleryModal .delete-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  padding: 6px;
+  /*! border-radius: 50%; */
+  cursor: pointer;
+  /*! font-size: 16px; */
 }
 
 #contact {

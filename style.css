@@ -260,7 +260,11 @@ li a:hover {
 }
 
 /* Contenu de la modale */
-.modal-content {
+.modal-content,
+.modal2-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	background: white;
 	padding: 20px;
 	border-radius: 8px;
@@ -269,6 +273,16 @@ li a:hover {
 	max-width: 90%;
 	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 	position: relative;
+}
+
+.modal-content h2,
+.modal2-content h2 {
+
+
+	text-align: center;
+	font-family: Work Sans;
+	color: black;
+	font-size: 26px;
 }
 
 /* Bouton de fermeture */
@@ -306,7 +320,10 @@ button {
 	grid-column-gap: 10px;
 	grid-row-gap: 25px;
 	padding: 70px;
+	border-bottom: 2px solid gray;
 }
+
+
 
 .gallery img,
 .galleryModal img {
@@ -352,17 +369,17 @@ button {
 	align-items: center;
 }
 
-/* Contenu de la modale */
-.modal2-content {
-	background: white;
-	padding: 20px;
-	border-radius: 8px;
-	width: 630px;
-	height: 688px;
-	max-width: 90%;
-	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-	position: relative;
+.dropzone {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .25rem;
+  min-height: 160px; padding: 24px;
+  background: #f3f3f3;
+  border: 2px dashed #bbb; border-radius: 16px;
+  text-align: center; cursor: pointer;
+  transition: background .2s, border-color .2s, box-shadow .2s;
+  color: #333;
 }
+
 
 .close2 {
 	position: absolute;
@@ -372,7 +389,10 @@ button {
 	cursor: pointer;
 }
 
-.return{
+.return {
+	position: absolute;
+	top: 10px;
+	left: 15px;
 	font-size: 21px;
 	cursor: pointer;
 }
@@ -462,16 +482,15 @@ body.pageFormulaire {
 
 form+button {
 	border: 1px solid #D9D9D9;
-	padding: 13px;
+	padding: 13px 60px;
 	border-radius: 20px;
 	color: #1D6154;
 	border-color: #1D6154;
 	font-size: 1.2em;
-	padding-left: 50px;
-	padding-right: 50px;
 	color: white;
 	background-color: #1D6154;
 }
+
 
 form+button+button {
 	text-decoration: underline;

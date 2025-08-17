@@ -55,7 +55,7 @@
 				<h2>Galerie photo</h2>
 				<div class="galleryModal">
 				</div>
-				<button id="ajouterPhoto">Ajouter une photo</button>
+				<input type="submit"  id="ajouterPhoto" value="Ajouter une photo">
 			</div>
 		</div>
 
@@ -65,11 +65,23 @@
 			<div class="modal2-content">
 				<span id="returnModal" class="return"><i class="fa-solid fa-arrow-left"></i></span>
 				<span id="closeModal2" class="close2">&times;</span>
-				<h2>titre deuxième modal</h2>
+				<h2>Ajout photo</h2>
+				<form action="/upload" method="post" enctype="multipart/form-data">
+					<label for="photo" class="dropzone" id="dropzone" tabindex="0" aria-describedby="upload-hint">
+					<input type="file" id="photo" name="photo" accept=".jpg,.png"><br><br>
+					<input type="submit" value="Envoyer"><br>
+
+
+					<label for="titre">Titre</label>
+					<input type="text" id="titre" name="titre" placeholder="" required>
+					<label for="categorie">Catégorie</label>
+					<input type="text" id="categorie" name="catégorie" placeholder="" required>
+					<input type="submit" value="Valider">
+				</form>
 			</div>
 		</div>
 
-		
+
 
 		<section id="portfolio">
 			<h2>Mes Projets</h2>

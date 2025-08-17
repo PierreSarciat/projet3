@@ -191,14 +191,15 @@ li:hover {
 	color: #B1663C;
 }
 
-a{
+a {
 	text-decoration: none;
 	color: black;
 }
 
-li a:hover{
+li a:hover {
 	color: #B1663C;
 }
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -245,34 +246,38 @@ li a:hover{
 /************fenetre modale*******************/
 
 .modal {
-  display: none; /* cachée par défaut */
-  position: fixed;
-  inset: 0; /* occupe tout l’écran */
-  background: rgba(0,0,0,0.5); /* fond assombri */
-  z-index: 1000; /* toujours au-dessus */
-  justify-content: center;
-  align-items: center;
+	display: none;
+	/* cachée par défaut */
+	position: fixed;
+	inset: 0;
+	/* occupe tout l’écran */
+	background: rgba(0, 0, 0, 0.5);
+	/* fond assombri */
+	z-index: 1000;
+	/* toujours au-dessus */
+	justify-content: center;
+	align-items: center;
 }
 
 /* Contenu de la modale */
 .modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 630px;
-  height: 688px;
-  max-width: 90%;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-  position: relative;
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+	width: 630px;
+	height: 688px;
+	max-width: 90%;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+	position: relative;
 }
 
 /* Bouton de fermeture */
 .close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  cursor: pointer;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 24px;
+	cursor: pointer;
 }
 
 
@@ -295,40 +300,83 @@ button {
 	grid-row-gap: 20px;
 }
 
-.galleryModal{
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-grid-column-gap:10px;
-grid-row-gap: 25px;
-padding: 70px;
+.galleryModal {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-column-gap: 10px;
+	grid-row-gap: 25px;
+	padding: 70px;
 }
 
-.gallery img, .galleryModal img {
+.gallery img,
+.galleryModal img {
 	width: 100%;
 
 }
 
-.galleryModal img{
+.galleryModal img {
 	display: block;
-	
+
 }
 
-.galleryModal figure{
+.galleryModal figure {
 	position: relative;
 	display: inline-block;
 }
 
 .galleryModal .delete-icon {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  color: white;
-  background: rgba(0,0,0,0.6);
-  padding: 6px;
-  /*! border-radius: 50%; */
-  cursor: pointer;
-  /*! font-size: 16px; */
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	color: white;
+	background: rgba(0, 0, 0, 0.6);
+	padding: 6px;
+	cursor: pointer;
+
 }
+
+
+/********fenêtre modale2*************************/
+
+.modal2 {
+	display: none;
+	/* cachée par défaut */
+	position: fixed;
+	inset: 0;
+	/* occupe tout l’écran */
+	background: rgba(0, 0, 0, 0.5);
+	/* fond assombri */
+	z-index: 1000;
+	/* toujours au-dessus */
+	justify-content: center;
+	align-items: center;
+}
+
+/* Contenu de la modale */
+.modal2-content {
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+	width: 630px;
+	height: 688px;
+	max-width: 90%;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+	position: relative;
+}
+
+.close2 {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.return{
+	font-size: 21px;
+	cursor: pointer;
+}
+
 
 #contact {
 	width: 50%;
@@ -386,15 +434,15 @@ footer nav ul {
 
 
 /******Formulaire*******************/
- body.pageFormulaire{
+body.pageFormulaire {
 	margin: 0px 50px;
 	background-color: #FFFEF8;
- }
+}
 
 
-.pageFormulaire li:hover{
+.pageFormulaire li:hover {
 	font-weight: bold;
-	color:black;
+	color: black;
 }
 
 .formulaire {
@@ -405,9 +453,9 @@ footer nav ul {
 	margin-top: 100px;
 }
 
-#message-erreur{
+#message-erreur {
 	color: red;
-	
+
 }
 
 
@@ -430,7 +478,7 @@ form+button+button {
 }
 
 
-input{
+input {
 	margin-bottom: 30px;
 	border-color: transparent;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
@@ -439,7 +487,7 @@ input{
 	height: 50px;
 }
 
-footer nav{
+footer nav {
 	display: flex;
 	justify-content: flex-end;
 	margin-top: 100px;

@@ -242,19 +242,28 @@ li a:hover {
 	border-color: #1D6154;
 }
 
+.loginProjet {
+	display: flex;
+	justify-content: center;
+	margin: 60px 0px 80px 0px;
+	gap: 20px;
+}
+
+.icone {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 
 /************fenetre modale*******************/
 
 .modal {
 	display: none;
-	/* cachée par défaut */
 	position: fixed;
 	inset: 0;
-	/* occupe tout l’écran */
 	background: rgba(0, 0, 0, 0.5);
-	/* fond assombri */
 	z-index: 1000;
-	/* toujours au-dessus */
 	justify-content: center;
 	align-items: center;
 }
@@ -303,7 +312,6 @@ button {
 
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
 }
 
 .gallery {
@@ -357,27 +365,29 @@ button {
 
 .modal2 {
 	display: none;
-	/* cachée par défaut */
 	position: fixed;
 	inset: 0;
-	/* occupe tout l’écran */
 	background: rgba(0, 0, 0, 0.5);
-	/* fond assombri */
 	z-index: 1000;
-	/* toujours au-dessus */
 	justify-content: center;
 	align-items: center;
 }
 
 .dropzone {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: .25rem;
-  min-height: 160px; padding: 24px;
-  background: #f3f3f3;
-  border: 2px dashed #bbb; border-radius: 16px;
-  text-align: center; cursor: pointer;
-  transition: background .2s, border-color .2s, box-shadow .2s;
-  color: #333;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: .25rem;
+	min-height: 160px;
+	padding: 24px;
+	background: #f3f3f3;
+	border: 2px dashed #bbb;
+	border-radius: 16px;
+	text-align: center;
+	cursor: pointer;
+	transition: background .2s, border-color .2s, box-shadow .2s;
+	color: #333;
 }
 
 

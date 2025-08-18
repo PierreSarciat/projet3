@@ -23,7 +23,7 @@
 			<ul>
 				<li>projets</li>
 				<li>contact</li>
-				<li><a href="formulaire.html">login</a></li>
+				<li><a id="logInOut" href="formulaire.html">login</a></li>
 				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 			</ul>
 		</nav>
@@ -45,50 +45,56 @@
 			</article>
 		</section>
 
-		<!---fenetre modale-->
-
-		<button id="openModal">Ouvrir la modale</button>
-
-		<div id="myModal" class="modal" aria-hidden="true">
-			<div class="modal-content">
-				<span id="closeModal" class="close">&times;</span>
-				<h2>Galerie photo</h2>
-				<div class="galleryModal">
-				</div>
-				<input type="submit"  id="ajouterPhoto" value="Ajouter une photo">
-			</div>
-		</div>
-
-		<!---fenetre modale 2-->
-
-		<div id="myModal2" class="modal2" aria-hidden="true">
-			<div class="modal2-content">
-				<span id="returnModal" class="return"><i class="fa-solid fa-arrow-left"></i></span>
-				<span id="closeModal2" class="close2">&times;</span>
-				<h2>Ajout photo</h2>
-				<form action="/upload" method="post" enctype="multipart/form-data">
-					<label for="photo" class="dropzone" id="dropzone" tabindex="0" aria-describedby="upload-hint">
-					<input type="file" id="photo" name="photo" accept=".jpg,.png"><br><br>
-					<input type="submit" value="Envoyer"><br>
-
-
-					<label for="titre">Titre</label>
-					<input type="text" id="titre" name="titre" placeholder="" required>
-					<label for="categorie">Catégorie</label>
-					<input type="text" id="categorie" name="catégorie" placeholder="" required>
-					<input type="submit" value="Valider">
-				</form>
-			</div>
-		</div>
-
 
 
 		<section id="portfolio">
-			<h2>Mes Projets</h2>
+			<div class="loginProjet">
+				<h2>Mes Projets </h2>
+				<span id="icone" style="display: none">
+					<button id="openModal"><i class="fa-regular fa-pen-to-square"></i>    modifier</button>
+				</span>
+				</div>
 			<div class="filtre">
 				<ul>
 				</ul>
 			</div>
+			<!---fenetre modale-->
+
+			
+
+			<aside id="myModal" class="modal" aria-hidden="true" aria-labelledby="titlemodal">
+				<div class="modal-content">
+					<span id="closeModal" class="close">&times;</span>
+					<h2 id="titlemodal">Galerie photo</h2>
+					<div class="galleryModal">
+					</div>
+					<input type="submit" id="ajouterPhoto" value="Ajouter une photo">
+				</div>
+			</aside>
+
+			<!---fenetre modale 2-->
+
+			<aside id="myModal2" class="modal2" aria-hidden="true" aria-labelledby="titlemodal">
+				<div class="modal2-content">
+					<span id="returnModal" class="return"><i class="fa-solid fa-arrow-left"></i></span>
+					<span id="closeModal2" class="close2">&times;</span>
+					<h2 id="titlemodal">Ajout photo</h2>
+					<form action="/upload" method="post" enctype="multipart/form-data">
+						<label for="photo" class="dropzone" id="dropzone" tabindex="0" aria-describedby="upload-hint">
+							<input type="file" id="photo" name="photo" accept=".jpg,.png"><br><br>
+							<input type="submit" value="Envoyer"><br>
+
+						</label>
+						<label for="titre">Titre</label>
+						<input type="text" id="titre" name="titre" placeholder="" required>
+						<label for="categorie">Catégorie</label>
+						<input type="text" id="categorie" name="categorie" placeholder="" required>
+						<input type="submit" value="Valider">
+					</form>
+				</div>
+			</aside>
+
+
 			<div class="gallery">
 
 			</div>
@@ -117,6 +123,7 @@
 	</footer>
 	<script src="filtreDynamique.js"></script>
 	<script src="boiteModale.js"></script>
+	<script src="login.js"></script>
 </body>
 
 </html>

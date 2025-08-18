@@ -54,7 +54,7 @@ fetch("http://localhost:5678/api/categories")
 
         for (let figure of data) {
             display += `
-        <figure data-category-id="${figure.categoryId}">
+        <figure data-id="${figure.id}" data-category-id="${figure.categoryId}">
             <img src="${figure.imageUrl}" alt="${figure.title}">
             <figcaption>${figure.title}</figcaption>
         </figure>`;
@@ -76,7 +76,7 @@ fetch("http://localhost:5678/api/categories")
 
         for (let figure of data) {
             display += `
-        <figure data-category-id="${figure.categoryId}">
+        <figure data-id="${figure.id}" data-category-id="${figure.categoryId}">
             <img src="${figure.imageUrl}" alt="${figure.title}"><i class="fa-solid fa-trash-can delete-icon"></i>
             
         </figure>`;
@@ -85,5 +85,34 @@ console.log(display);
         document.querySelector(".galleryModal").innerHTML = display;
     })
     .catch(err => console.log("Erreur chargement projets :", err));
+
+
+
+    /**************************Suppression des projets fenêtre modale******************************** */
+
+
+    /***ajout ecouteur sur icône corbeille*/
+
+
+/*const deleteIcons = document.querySelectorAll(".delete-icon");
+deleteIcons.forEach(icon => {
+  icon.addEventListener("click", (e) => {
+    const figure = e.target.closest("figure");
+    const id = figure.dataset.id;
+    console.log("Clique détecté sur la corbeille de l’ID :", id);
+  });
+
+  console.log("Écouteur ajouté sur une icône corbeille :", icon);
+});*/
+
+document.querySelector(".galleryModal").addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete-icon")) {
+    const figure = e.target.closest("figure");
+    const id = figure.dataset.id;
+    console.log("Icône cliquée via délégation, ID :", id);
+  }
+});
+    
+
 
 

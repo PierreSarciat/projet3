@@ -374,20 +374,24 @@ button {
 }
 
 .dropzone {
+	height: 169px;
+	width: 420px;
+	margin: auto;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: center;
 	gap: .25rem;
 	min-height: 160px;
 	padding: 24px;
-	background: #f3f3f3;
+	background: #E8F1F6;
 	border: 2px dashed #bbb;
 	border-radius: 16px;
 	text-align: center;
 	cursor: pointer;
 	transition: background .2s, border-color .2s, box-shadow .2s;
 	color: #333;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 
@@ -405,6 +409,12 @@ button {
 	left: 15px;
 	font-size: 21px;
 	cursor: pointer;
+}
+.inputModal2{
+
+	
+	background-color: grey !important;
+
 }
 
 

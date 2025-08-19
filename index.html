@@ -51,16 +51,16 @@
 			<div class="loginProjet">
 				<h2>Mes Projets </h2>
 				<span id="icone" style="display: none">
-					<button id="openModal"><i class="fa-regular fa-pen-to-square"></i>    modifier</button>
+					<button id="openModal"><i class="fa-regular fa-pen-to-square"></i> modifier</button>
 				</span>
-				</div>
+			</div>
 			<div class="filtre">
 				<ul>
 				</ul>
 			</div>
 			<!---fenetre modale-->
 
-			
+
 
 			<aside id="myModal" class="modal" aria-hidden="true" aria-labelledby="titlemodal">
 				<div class="modal-content">
@@ -82,14 +82,16 @@
 					<form action="/upload" method="post" enctype="multipart/form-data">
 						<label for="photo" class="dropzone" id="dropzone" tabindex="0" aria-describedby="upload-hint">
 							<input type="file" id="photo" name="photo" accept=".jpg,.png"><br><br>
-							<input type="submit" value="Envoyer"><br>
-
+							<button >
+								<input class="inputModal2" type="submit" value="+ Ajouter photo"><br>
+								<p>jpg png: 4mo max</p>
+							</button>
 						</label>
 						<label for="titre">Titre</label>
 						<input type="text" id="titre" name="titre" placeholder="" required>
 						<label for="categorie">Catégorie</label>
 						<input type="text" id="categorie" name="categorie" placeholder="" required>
-						<input type="submit" value="Valider">
+						<input class="inputModal2" type="submit" value="Valider">
 					</form>
 				</div>
 			</aside>
@@ -124,6 +126,8 @@
 	<script src="filtreDynamique.js"></script>
 	<script src="boiteModale.js"></script>
 	<script src="login.js"></script>
+	<script src="works.js"></script>
+
 </body>
 
 </html>

@@ -14,23 +14,23 @@ fetch("http://localhost:5678/api/categories")
         document.querySelector(".filtre ul").innerHTML = display;
 
 
-/********************Ajout d' un écouteur d' évènement click****************************************************** */
+        /********************Ajout d' un écouteur d' évènement click****************************************************** */
 
         const boutons = document.querySelectorAll(".bouton");
 
         boutons.forEach(bouton => {
             bouton.addEventListener("click", () => {
-                const categoryId = bouton.dataset.id; 
+                const categoryId = bouton.dataset.id;
                 console.log("Filtrage pour categoryId :", categoryId);
 
 
 
-/************************Filtrage dynamique****************************************************************** */
+                /************************Filtrage dynamique****************************************************************** */
 
-                const figures = document.querySelectorAll(".gallery figure");
+               const figures = document.querySelectorAll(".gallery figure");
 
                 figures.forEach(figure => {
-                    const projetCategoryId = figure.dataset.categoryId; 
+                    const projetCategoryId = figure.dataset.categoryId;
 
                     if (categoryId === "0" || projetCategoryId === categoryId) {
                         figure.style.display = "block";
@@ -47,7 +47,7 @@ fetch("http://localhost:5678/api/categories")
 /*******************************Chargement et affichage direct des projets  avant de commencer à filtrer*******************/
 
 
- fetch("http://localhost:5678/api/works")
+fetch("http://localhost:5678/api/works")
     .then(res => res.json())
     .then(data => {
         let display = "";
@@ -66,13 +66,13 @@ fetch("http://localhost:5678/api/categories")
 
 
 
-    /***************Chargement et affichage direct des projets dans la fenêtre modale*********************************** */
+/***************Chargement et affichage direct des projets dans la fenêtre modale*********************************** */
 
 
-     fetch("http://localhost:5678/api/works")
+fetch("http://localhost:5678/api/works")
     .then(res => res.json())
     .then(data => {
-        let display ="";
+        let display = "";
 
         for (let figure of data) {
             display += `
@@ -81,38 +81,50 @@ fetch("http://localhost:5678/api/categories")
             
         </figure>`;
         }
-console.log(display);
+        console.log(display);
         document.querySelector(".galleryModal").innerHTML = display;
     })
     .catch(err => console.log("Erreur chargement projets :", err));
 
 
 
-    /**************************Suppression des projets fenêtre modale******************************** */
+/**************************Suppression des projets fenêtre modale******************************** */
 
 
-    /***ajout ecouteur sur icône corbeille*/
+/***ajout ecouteur sur icône corbeille*/
 
-
-/*const deleteIcons = document.querySelectorAll(".delete-icon");
-deleteIcons.forEach(icon => {
-  icon.addEventListener("click", (e) => {
-    const figure = e.target.closest("figure");
-    const id = figure.dataset.id;
-    console.log("Clique détecté sur la corbeille de l’ID :", id);
-  });
-
-  console.log("Écouteur ajouté sur une icône corbeille :", icon);
-});*/
 
 document.querySelector(".galleryModal").addEventListener("click", (e) => {
-  if (e.target.classList.contains("delete-icon")) {
-    const figure = e.target.closest("figure");
-    const id = figure.dataset.id;
-    console.log("Icône cliquée via délégation, ID :", id);
-  }
+    if (e.target.classList.contains("delete-icon")) {
+        const figure = e.target.closest("figure");
+        const id = figure.dataset.id;
+        console.log("ID :", id);
+        deleteWork(id);
+    }
 });
-    
+
+
+/*********suppression travaux********** */
+
+function deleteWork(id) {
+    fetch(`http://localhost:5678/api/works/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Accept": "",
+            "Authorization": `Bearer ${token}`
+        }
+    })
+  .then(response => {
+        if (!response.ok) {
+            throw new Error("Erreur lors de la suppression");
+        }
+        console.log("Travail supprimé avec succès !");
+       
+        document.querySelector(`figure[data-id="${id}"]`).remove();
+    })
+        .catch(err => console.error(err));
+}
+
 
 
 

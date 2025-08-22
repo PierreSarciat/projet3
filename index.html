@@ -58,6 +58,11 @@
 				<ul>
 				</ul>
 			</div>
+
+			<div class="gallery">
+
+			</div>
+			
 			<!---fenetre modale-->
 
 
@@ -79,9 +84,9 @@
 					<span id="returnModal" class="return"><i class="fa-solid fa-arrow-left"></i></span>
 					<span id="closeModal2" class="close2">&times;</span>
 					<h2 id="titlemodal">Ajout photo</h2>
-					<form action="/upload" method="post" enctype="multipart/form-data">
+					<!--<form action="/upload" method="post" enctype="multipart/form-data" id ="uploadForm">
 						<label for="photo" class="dropzone" id="dropzone" tabindex="0" aria-describedby="upload-hint">
-							<input type="file" id="photo" name="photo" accept=".jpg,.png"><br><br>
+							<input type="file" id="photo" name="image" accept=".jpg,.png"><br><br>
 							<button >
 								<input class="inputModal2" type="submit" value="+ Ajouter photo"><br>
 								<p>jpg png: 4mo max</p>
@@ -92,14 +97,30 @@
 						<label for="categorie">Catégorie</label>
 						<input type="text" id="categorie" name="categorie" placeholder="" required>
 						<input class="inputModal2" type="submit" value="Valider">
+					</form>-->
+					<form id="uploadForm">
+						<label for="photo" class="dropzone" id="dropzone">
+							<button>
+								<input type="file" id="photo" name="image" accept=".jpg,.png" required>
+								<p>jpg, png : 4mo max</p>
+							</button>
+						</label>
+						<input type="text" id="titre" name="title" placeholder="Titre" required>
+						<select id="categorie" name="category" required>
+							<option value="1">Objets</option>
+							<option value="2">Appartements</option>
+							<option value="3">Hôtels & restaurants</option>
+						</select>
+						<button type="submit">Ajouter</button>
 					</form>
+
+					<div class="gallery"></div>
+
 				</div>
 			</aside>
 
 
-			<div class="gallery">
-
-			</div>
+			
 		</section>
 		<section id="contact">
 			<h2>Contact</h2>
@@ -126,7 +147,7 @@
 	<script src="filtreDynamique.js"></script>
 	<script src="boiteModale.js"></script>
 	<script src="login.js"></script>
-	<script src="works.js"></script>
+	<script src="fonctions.js" defer></script>
 
 </body>
 

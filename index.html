@@ -62,7 +62,7 @@
 			<div class="gallery">
 
 			</div>
-			
+
 			<!---fenetre modale-->
 
 
@@ -84,22 +84,12 @@
 					<span id="returnModal" class="return"><i class="fa-solid fa-arrow-left"></i></span>
 					<span id="closeModal2" class="close2">&times;</span>
 					<h2 id="titlemodal">Ajout photo</h2>
-					<!--<form action="/upload" method="post" enctype="multipart/form-data" id ="uploadForm">
-						<label for="photo" class="dropzone" id="dropzone" tabindex="0" aria-describedby="upload-hint">
-							<input type="file" id="photo" name="image" accept=".jpg,.png"><br><br>
-							<button >
-								<input class="inputModal2" type="submit" value="+ Ajouter photo"><br>
-								<p>jpg png: 4mo max</p>
-							</button>
-						</label>
-						<label for="titre">Titre</label>
-						<input type="text" id="titre" name="titre" placeholder="" required>
-						<label for="categorie">Catégorie</label>
-						<input type="text" id="categorie" name="categorie" placeholder="" required>
-						<input class="inputModal2" type="submit" value="Valider">
-					</form>-->
 					<form id="uploadForm">
 						<label for="photo" class="dropzone" id="dropzone">
+							<div id="previewContainer">
+								<img id="previewImage" src="" alt="Aperçu de l'image"
+									style="max-width:200px; display:none; margin-bottom:10px; border-radius:8px;">
+							</div>
 							<button>
 								<input type="file" id="photo" name="image" accept=".jpg,.png" required>
 								<p>jpg, png : 4mo max</p>
@@ -120,7 +110,7 @@
 			</aside>
 
 
-			
+
 		</section>
 		<section id="contact">
 			<h2>Contact</h2>
@@ -147,7 +137,7 @@
 	<script src="filtreDynamique.js"></script>
 	<script src="boiteModale.js"></script>
 	<script src="login.js"></script>
-	<script src="fonctions.js" defer></script>
+	<script src="fonctions.js"></script>
 
 </body>
 

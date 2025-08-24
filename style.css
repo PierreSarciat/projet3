@@ -134,10 +134,8 @@ table {
 	border-spacing: 0;
 }
 
-/** end reset css**/
+
 body {
-	max-width: 1140px;
-	margin: auto;
 	font-family: 'Work Sans';
 	font-size: 14px;
 }
@@ -371,6 +369,13 @@ button {
 	z-index: 1000;
 	justify-content: center;
 	align-items: center;
+}
+
+.preview{
+	max-width:200px; 
+	display:none; 
+	margin-bottom:10px; 
+	border-radius:8px;
 }
 
 .dropzone {

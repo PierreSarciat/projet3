@@ -81,12 +81,27 @@ document.querySelector(".galleryModal").addEventListener("click", (e) => {
         const figure = e.target.closest("figure");
         const id = figure.dataset.id;
         console.log("ID :", id);
-        deleteWork(id);
+        deleteWork(id, figure);
     }
 });
 
+/********************preview*************************************** */
 
+ // Sélection des éléments
+const inputPhoto = document.getElementById("photo");
+const previewImage = document.getElementById("previewImage");
 
+// Quand on choisit un fichier
+inputPhoto.addEventListener("change", () => {
+  const file = inputPhoto.files[0];
+  if (file) {
+    const objectURL = URL.createObjectURL(file);
+    previewImage.src = objectURL;
+    previewImage.style.display = "block";
+  } else {
+    previewImage.style.display = "none";
+  }
+});
 
 
 
@@ -104,6 +119,9 @@ document.getElementById("uploadForm").addEventListener("submit", function (e) {
     formData.append("image", document.getElementById("photo").files[0]); // fichier image
     formData.append("title", document.getElementById("titre").value);    // titre
     formData.append("category", document.getElementById("categorie").value); // catégorie
+
+
+   
 
     /*Envoyer à l’API*/
 
@@ -134,9 +152,10 @@ document.getElementById("uploadForm").addEventListener("submit", function (e) {
         })
         .then(() => {
 
-            /*Réinitialiser le formulaire après ajout*/
+            /*Réinitialiser le formulaire et le preview après ajout*/
 
             document.getElementById("uploadForm").reset();
+            previewImage.style.display = "none";
         })
         .catch(err => console.error("Erreur :", err));
 });

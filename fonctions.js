@@ -55,7 +55,7 @@ function loadGalleryModal(data) {
 
 /*********suppression travaux********** */
 
-function deleteWork(id) {
+function deleteWork(id,elem) {
 
      fetch(`http://localhost:5678/api/works/${id}`, {
         method: "DELETE",
@@ -68,7 +68,8 @@ function deleteWork(id) {
             throw new Error("Erreur lors de la suppression");
         }
         console.log("Travail supprimé avec succès !");            
-        document.querySelector(`figure[data-id="${id}"]`).remove();
+        /*document.querySelector(`figure[data-id="${id}"]`).remove();*/
+        elem.remove();
 
         // ✅ Recharger la galerie depuis l’API
         return fetch("http://localhost:5678/api/works")

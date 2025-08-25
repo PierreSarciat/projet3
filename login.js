@@ -1,30 +1,44 @@
 
-const affichageIcone = document.getElementById("icone")
-const affichageFiltre = document.querySelector(".filtre")
-const logInOut = document.getElementById("logInOut")
+let bouton = document.querySelector("button");
 
-const token = localStorage.getItem("token");
-const adminBtn = document.getElementById("admin-btn");
+bouton.addEventListener("click", (event) => {
+    event.preventDefault();
 
-function changeInOut(e) {
-    e.preventDefault()
-    logInOut.textContent = "login";
-    logInOut.href = "formulaire.html"
-    localStorage.removeItem("token");
-    affichageIcone.style.display = "none";
-    affichageFiltre.style.display = "block";
-    logInOut.removeEventListener("click", changeInOut);
-}
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
 
-if (token) {
-    affichageIcone.style.display = "flex";
-    affichageFiltre.style.display = "none";
-    logInOut.textContent = "logout";
-    logInOut.href = "";
-    logInOut.addEventListener("click", changeInOut);
-}
+    console.log("E-mail :", email);
+    console.log("Mot de passe :", password);
+
+    const dataConnexion = {
+        email: email,
+        password: password
+    };
+
+    fetch("http://localhost:5678/api/users/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dataConnexion)
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erreur réseau ou identifiants incorrects");
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Connexion réussie :", data);
+            localStorage.setItem("token", data.token);
+            window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error("Erreur lors de la connexion :", error);
+            let erreurMessage = document.getElementById("message-erreur");
+            erreurMessage.textContent = "E-mail ou mot de passe incorrect";
 
 
-
-
+        });
+});
 

@@ -1,10 +1,4 @@
-
-
-
-
-
-
-/**********Chargement des catégories,création des boutons et injection dans HTML***************************************/
+/**********Chargement des catégories,création des boutons et injection des catégories dans index.html et boîte modale ***************************************/
 
 
 fetch("http://localhost:5678/api/categories")
@@ -14,28 +8,19 @@ fetch("http://localhost:5678/api/categories")
         for (let filtre of data) {
             display += `<li><button class="bouton" data-id="${filtre.id}">${filtre.name}</button></li>`;
         }
-
         document.querySelector(".filtre ul").innerHTML = display;
 
 
-        /********************Ajout d' un écouteur d' évènement click****************************************************** */
-
-        const boutons = document.querySelectorAll(".bouton");
-
+        const boutons = document.querySelectorAll(".bouton");    //Ajout d' un écouteur d' évènement click
         boutons.forEach(bouton => {
             bouton.addEventListener("click", () => {
                 const categoryId = bouton.dataset.id;
                 console.log("Filtrage pour categoryId :", categoryId);
 
 
-
-                /************************Filtrage dynamique****************************************************************** */
-
-                const figures = document.querySelectorAll(".gallery figure");
-
+                const figures = document.querySelectorAll(".gallery figure");   //Filtrage dynamique
                 figures.forEach(figure => {
                     const projetCategoryId = figure.dataset.categoryId;
-
                     if (categoryId === "0" || projetCategoryId === categoryId) {
                         figure.style.display = "block";
                     } else {
@@ -45,10 +30,8 @@ fetch("http://localhost:5678/api/categories")
             });
         });
 
-        /***********************injection des catégories de l' api dans la fenêtre modale************************************* */
 
-
-        const selectCategorie = document.getElementById("categorie");
+        const selectCategorie = document.getElementById("categorie");         //injection des catégories de l' api dans la fenêtre modale
         data.forEach(cat => {
             const option = document.createElement("option");
             option.value = cat.id;
@@ -60,6 +43,8 @@ fetch("http://localhost:5678/api/categories")
 /* })
 
  .catch(err => console.error("Erreur chargement catégories :", err));*/
+
+
 
 
 
@@ -77,13 +62,7 @@ fetch("http://localhost:5678/api/works")
     .catch(err => console.log("Erreur chargement projets :", err));
 
 
-
-
-
-
 /**************************Suppression des projets fenêtre modale******************************** */
-
-
 
 
 
@@ -96,35 +75,16 @@ document.querySelector(".galleryModal").addEventListener("click", (e) => {
     }
 });
 
-/********************preview*************************************** */
-
-// Sélection des éléments
-const inputPhoto = document.getElementById("photo");
-const previewImage = document.getElementById("previewImage");
-
-// Quand on choisit un fichier
-inputPhoto.addEventListener("change", () => {
-    const file = inputPhoto.files[0];
-    if (file) {
-        const objectURL = URL.createObjectURL(file);
-        previewImage.src = objectURL;
-        previewImage.style.display = "block";
-    } else {
-        previewImage.style.display = "none";
-    }
-});
 
 
 
 /**********************Rajout de travaux*********************** */
 
 
-
-
 document.getElementById("uploadForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    /*Préparer les données du formulaire*/
+    //données du formulaire
 
     const formData = new FormData();
     formData.append("image", document.getElementById("photo").files[0]); // fichier image
@@ -132,11 +92,7 @@ document.getElementById("uploadForm").addEventListener("submit", function (e) {
     formData.append("category", document.getElementById("categorie").value); // catégorie
 
 
-
-
-    /*Envoyer à l’API*/
-
-    fetch("http://localhost:5678/api/works", {
+    fetch("http://localhost:5678/api/works", {    //Envoyer à l’API
         method: "POST",
         headers: {
             "Authorization": `Bearer ${token}`
@@ -147,24 +103,18 @@ document.getElementById("uploadForm").addEventListener("submit", function (e) {
             if (!res.ok) {
                 throw new Error("Échec de l’upload");
             }
-            return res.json(); // L’API renvoie l’objet créé
+            return res.json();
         })
         .then(newWork => {
             console.log("Travail ajouté :", newWork);
-
-            // ✅ Recharger la galerie depuis l’API
-
-            return fetch("http://localhost:5678/api/works")
+            return fetch("http://localhost:5678/api/works")  // Recharger la galerie depuis l’API
                 .then(res => res.json())
                 .then(data => {
                     loadGallery(data);
                     loadGalleryModal(data);
                 });
         })
-        .then(() => {
-
-            /*Réinitialiser le formulaire et le preview après ajout*/
-
+        .then(() => {   //Réinitialiser le formulaire et le preview après ajout          
             document.getElementById("uploadForm").reset();
             previewImage.style.display = "none";
         })
@@ -172,3 +122,19 @@ document.getElementById("uploadForm").addEventListener("submit", function (e) {
 });
 
 
+/********************preview*************************************** */
+
+
+const inputPhoto = document.getElementById("photo");
+const previewImage = document.getElementById("previewImage");
+
+inputPhoto.addEventListener("change", () => {
+    const file = inputPhoto.files[0];
+    if (file) {
+        const objectURL = URL.createObjectURL(file);
+        previewImage.src = objectURL;
+        previewImage.style.display = "block";
+    } else {
+        previewImage.style.display = "none";
+    }
+});

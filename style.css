@@ -371,7 +371,7 @@ button {
 	align-items: center;
 }
 
-.preview{
+#previewImage{
 	max-width:200px; 
 	display:none; 
 	margin-bottom:10px; 

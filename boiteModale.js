@@ -10,7 +10,7 @@ const openModal2 = document.getElementById("ajouterPhoto")
 const closeBtn2 = document.getElementById("closeModal2")
 const returnModal = document.getElementById("returnModal")
 
-
+/***********boîte modale 1*********************** */
 
 // Ouvrir
 openBtn.addEventListener("click", () => {
@@ -18,10 +18,12 @@ openBtn.addEventListener("click", () => {
   modal.setAttribute("aria-hidden", "false")
 })
 
-// Fermer en cliquant sur le X
+// Fermer 
+
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none"
   modal.setAttribute("aria-hidden", "true")
+  modal = null
 })
 
 // Fermer en cliquant sur le fond
@@ -29,25 +31,29 @@ modal.addEventListener("click", (e) => {
   if (e.target === modal) {
     modal.style.display = "none"
     modal.setAttribute("aria-hidden", "true")
+    modal = null
   }
 })
 
-//        boite modale 2
+/*******************  boite modale 2*****************************/
 
 
-// ouvrir boîte modale2
+// ouvrir 
 
 openModal2.addEventListener("click", () => {
   modal2.style.display = "flex"
   modal2.setAttribute("aria-hidden", "false")
   modal.style.display = "none"
+  modal.setAttribute("aria-hidden", "true ")
+  modal = null
 })
 
-//  fermer en cliquant sur x
+//  fermer 
 
 closeBtn2.addEventListener("click", () => {
   modal2.style.display = "none"
   modal2.setAttribute("aria-hidden", "true")
+  modal2 = null
 
 })
 
@@ -57,7 +63,9 @@ modal2.addEventListener("click", (e) => {
   if (e.target === modal2) {
     modal2.style.display = "none"
     modal2.setAttribute("aria-hidden", "true")
+    modal2 = null
   }
+
 })
 
 
@@ -68,6 +76,7 @@ returnModal.addEventListener("click", () => {
   modal2.setAttribute("aria-hidden", "true")
   modal.style.display = "flex"
   modal.setAttribute("aria-hidden", "false")
+  modal2 = null
 })
 
 

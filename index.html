@@ -87,8 +87,7 @@
 					<form id="uploadForm">
 						<label for="photo" class="dropzone" id="dropzone">
 							<div id="previewContainer">
-								<img id="previewImage" src="" alt="Aperçu de l'image"
-									style="max-width:200px; display:none; margin-bottom:10px; border-radius:8px;">
+								<img id="previewImage" src="" alt="Aperçu de l'image">
 							</div>
 							<button>
 								<input type="file" id="photo" name="image" accept=".jpg,.png" required>
@@ -96,11 +95,11 @@
 							</button>
 						</label>
 						<input type="text" id="titre" name="title" placeholder="Titre" required>
+						<label for="categorie">Catégorie</label>
 						<select id="categorie" name="category" required>
-							<option value="1">Objets</option>
-							<option value="2">Appartements</option>
-							<option value="3">Hôtels & restaurants</option>
+
 						</select>
+
 						<button type="submit">Ajouter</button>
 					</form>
 

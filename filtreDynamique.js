@@ -1,5 +1,9 @@
 
 
+
+
+
+
 /**********Chargement des catégories,création des boutons et injection dans HTML***************************************/
 
 
@@ -40,33 +44,40 @@ fetch("http://localhost:5678/api/categories")
                 });
             });
         });
+
+        /***********************injection des catégories de l' api dans la fenêtre modale************************************* */
+
+
+        const selectCategorie = document.getElementById("categorie");
+        data.forEach(cat => {
+            const option = document.createElement("option");
+            option.value = cat.id;
+            option.textContent = cat.name;
+            selectCategorie.appendChild(option);
+        });
     })
     .catch(err => console.log("Erreur chargement filtres :", err));
+/* })
 
-
-/*******************************Chargement et affichage direct des projets  avant de commencer à filtrer*******************/
-
-
-fetch("http://localhost:5678/api/works")
-    .then(res => res.json())
-    .then(data => {
-        loadGallery(data)
-    })
-    .catch(err => console.log("Erreur chargement projets :", err));
+ .catch(err => console.error("Erreur chargement catégories :", err));*/
 
 
 
-/***************Chargement et affichage direct des projets dans la fenêtre modale*********************************** */
+
+/*******************************Chargement et affichage direct des projets  dans toutes les galeries avant de filtrer*******************/
 
 
 fetch("http://localhost:5678/api/works")
     .then(res => res.json())
     .then(data => {
         console.log("Données reçues :", data);
-        loadGalleryModal(data)
         loadGallery(data)
+        loadGalleryModal(data)
     })
     .catch(err => console.log("Erreur chargement projets :", err));
+
+
+
 
 
 
@@ -87,20 +98,20 @@ document.querySelector(".galleryModal").addEventListener("click", (e) => {
 
 /********************preview*************************************** */
 
- // Sélection des éléments
+// Sélection des éléments
 const inputPhoto = document.getElementById("photo");
 const previewImage = document.getElementById("previewImage");
 
 // Quand on choisit un fichier
 inputPhoto.addEventListener("change", () => {
-  const file = inputPhoto.files[0];
-  if (file) {
-    const objectURL = URL.createObjectURL(file);
-    previewImage.src = objectURL;
-    previewImage.style.display = "block";
-  } else {
-    previewImage.style.display = "none";
-  }
+    const file = inputPhoto.files[0];
+    if (file) {
+        const objectURL = URL.createObjectURL(file);
+        previewImage.src = objectURL;
+        previewImage.style.display = "block";
+    } else {
+        previewImage.style.display = "none";
+    }
 });
 
 
@@ -121,7 +132,7 @@ document.getElementById("uploadForm").addEventListener("submit", function (e) {
     formData.append("category", document.getElementById("categorie").value); // catégorie
 
 
-   
+
 
     /*Envoyer à l’API*/
 
@@ -159,6 +170,5 @@ document.getElementById("uploadForm").addEventListener("submit", function (e) {
         })
         .catch(err => console.error("Erreur :", err));
 });
-
 
 

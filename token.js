@@ -9,7 +9,7 @@ const token = localStorage.getItem("token");
 function changeInOut(e) {
     e.preventDefault()
     logInOut.textContent = "login";
-    logInOut.href = "formulaire.html"
+    logInOut.href = "login.html"
     localStorage.removeItem("token");
     affichageIcone.style.display = "none";
     affichageFiltre.style.display = "block";

@@ -241,7 +241,7 @@ li a:hover {
 	border-color: #1D6154;
 }
 
-.filtre li:hover{
+.filtre li:hover {
 	color: white;
 	background-color: #1D6154;
 }
@@ -377,11 +377,11 @@ button {
 	align-items: center;
 }
 
-#previewImage{
-	max-width:200px; 
-	display:none; 
-	margin-bottom:10px; 
-	border-radius:8px;
+#previewImage {
+	max-width: 200px;
+	display: none;
+	margin-bottom: 10px;
+	border-radius: 8px;
 }
 
 .dropzone {
@@ -405,6 +405,23 @@ button {
 	margin-bottom: 30px;
 }
 
+#btnModal2 i {
+	/*icône dans modal2*/
+	font-size: 76px;
+	color: #b1bdc3;
+}
+
+#ajouterPhoto2 {
+	font-weight: bold;
+	color: #5e78858a;
+	border: 1px solid;
+	border-color: #b1bdc3;
+	background-color: #b1bdc3;
+	padding: 10px;
+	margin: 0px 80px;
+	border-radius: 25px;
+}
+
 
 .close2 {
 	position: absolute;
@@ -421,9 +438,10 @@ button {
 	font-size: 21px;
 	cursor: pointer;
 }
-.inputModal2{
 
-	
+.inputModal2 {
+
+
 	background-color: grey !important;
 
 }

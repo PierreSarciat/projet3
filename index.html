@@ -89,8 +89,10 @@
 							<div id="previewContainer">
 								<img id="previewImage" src="" alt="Aperçu de l'image">
 							</div>
-							<button>
-								<input type="file" id="photo" name="image" accept=".jpg,.png" required>
+							<button id="btnModal2">
+								<i class="fa-regular fa-image"></i>
+								<p id="ajouterPhoto2">+Ajouter une photo</p>
+								<input type="file" id="photo" name="image" accept=".jpg,.png" required hidden>
 								<p>jpg, png : 4mo max</p>
 							</button>
 						</label>
@@ -133,7 +135,7 @@
 			</ul>
 		</nav>
 	</footer>
-	<script src="filtreDynamique.js"></script>
+	<script src="requeteAPI.js"></script>
 	<script src="boiteModale.js"></script>
 	<script src="login.js"></script>
 	<script src="fonctions.js"></script>

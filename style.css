@@ -391,12 +391,12 @@ button {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: .25rem;
+	gap: 1rem;
 	min-height: 160px;
 	padding: 24px;
 	background: #E8F1F6;
-	border: 2px dashed #bbb;
-	border-radius: 16px;
+	/*! border: 2px dashed #bbb; */
+	/*! border-radius: 16px; */
 	text-align: center;
 	cursor: pointer;
 	transition: background .2s, border-color .2s, box-shadow .2s;
@@ -405,8 +405,7 @@ button {
 	margin-bottom: 30px;
 }
 
-#btnModal2 i {
-	/*icône dans modal2*/
+#dropzone i {       	/*icône dans modal2*/
 	font-size: 76px;
 	color: #b1bdc3;
 }
@@ -546,7 +545,7 @@ form+button+button {
 }
 
 
-input {
+input, #categorie {
 	margin-bottom: 30px;
 	border-color: transparent;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);

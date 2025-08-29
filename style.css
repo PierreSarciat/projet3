@@ -137,15 +137,26 @@ table {
 
 body {
 	max-width: 1140px;
-	margin:auto;
+	margin: auto;
 	font-family: 'Work Sans';
 	font-size: 14px;
 }
+
 
 header {
 	display: flex;
 	justify-content: space-between;
 	margin: 50px 0
+}
+
+#modeEdition{
+	display: none;
+	border:1px solid black;
+	text-align: center;
+	padding: 16px;
+	color: white;
+	background-color: black;
+	
 }
 
 section {
@@ -405,7 +416,8 @@ button {
 	margin-bottom: 30px;
 }
 
-#dropzone i {       	/*icône dans modal2*/
+#dropzone i {
+	/*icône dans modal2*/
 	font-size: 76px;
 	color: #b1bdc3;
 }
@@ -505,7 +517,7 @@ footer nav ul {
 body.pageFormulaire {
 	margin: auto;
 	background-color: #FFFEF8;
-	padding: 20px;
+	padding: 0px 20px;
 }
 
 
@@ -546,7 +558,8 @@ form+button+button {
 }
 
 
-input, #categorie {
+input,
+#categorie {
 	margin-bottom: 30px;
 	border-color: transparent;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);

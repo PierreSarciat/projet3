@@ -14,6 +14,7 @@ function changeInOut(e) {
     affichageIcone.style.display = "none";
     affichageFiltre.style.display = "block";
     logInOut.removeEventListener("click", changeInOut);
+    modeEdition.style.display="none";
 }
 
 if (token) {
@@ -22,6 +23,7 @@ if (token) {
     logInOut.textContent = "logout";
     logInOut.href = "";
     logInOut.addEventListener("click", changeInOut);
+    modeEdition.style.display = "block";
 }
 
 

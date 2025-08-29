@@ -39,7 +39,7 @@ function loadGalleryModal(data) {
   console.log(display);
   document.querySelector(".galleryModal").innerHTML = display;
 
-  // 🎯 maintenant que les icônes existent dans le DOM, on leur met les écouteurs
+  // écouteurs sur icones
   const deleteIcons = galleryModal.querySelectorAll(".delete-icon");
   deleteIcons.forEach(icon => {
     icon.addEventListener("click", (e) => {

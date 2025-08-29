@@ -395,8 +395,6 @@ button {
 	min-height: 160px;
 	padding: 24px;
 	background: #E8F1F6;
-	/*! border: 2px dashed #bbb; */
-	/*! border-radius: 16px; */
 	text-align: center;
 	cursor: pointer;
 	transition: background .2s, border-color .2s, box-shadow .2s;

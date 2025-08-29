@@ -4,7 +4,7 @@
 fetch("http://localhost:5678/api/categories")
     .then(res => res.json())
     .then(data => {
-        let display = '<li><button class="bouton" data-id="0">Tous</button></li>';
+        let display = '<li class="active"><button class="bouton" data-id="0">Tous</button></li>';
         for (let filtre of data) {
             display += `<li><button class="bouton" data-id="${filtre.id}">${filtre.name}</button></li>`;
         }

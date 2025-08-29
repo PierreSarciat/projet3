@@ -254,7 +254,8 @@ li a:hover {
 	border-color: #1D6154;
 }
 
-.filtre li:hover {
+.filtre li:hover,
+.filtre  li.active {
 	color: white;
 	background-color: #1D6154;
 }

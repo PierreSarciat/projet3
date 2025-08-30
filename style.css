@@ -156,7 +156,9 @@ header {
 	padding: 16px;
 	color: white;
 	background-color: black;
-	
+	width: 190%;
+	margin-left: -50%;
+	margin-right: -50%;
 }
 
 section {

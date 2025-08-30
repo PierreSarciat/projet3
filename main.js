@@ -97,7 +97,7 @@ document.getElementById("uploadForm").addEventListener("submit", function (e) {
     formData.append("image", document.getElementById("photo").files[0]); // fichier image
     formData.append("title", document.getElementById("titre").value);    // titre
     formData.append("category", document.getElementById("categorie").value); // catégorie
-
+    const dropzoneBefore = document.getElementById("dropzoneBefore")
 
 
 
@@ -126,6 +126,7 @@ document.getElementById("uploadForm").addEventListener("submit", function (e) {
         .then(() => {   //Réinitialiser le formulaire et le preview après ajout          
             document.getElementById("uploadForm").reset();
             previewImage.style.display = "none";
+            dropzoneBefore.style.display = "block";
         })
         .catch(err => console.error("Erreur :", err));
 });
@@ -143,7 +144,7 @@ inputPhoto.addEventListener("change", () => {
         const objectURL = URL.createObjectURL(file);
         previewImage.src = objectURL;
         previewImage.style.display = "block";
-        dropzoneBefore.style.display="none";
+        dropzoneBefore.style.display = "none";
     } else {
         previewImage.style.display = "none";
     }

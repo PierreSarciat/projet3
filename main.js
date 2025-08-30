@@ -99,7 +99,7 @@ document.getElementById("uploadForm").addEventListener("submit", function (e) {
     formData.append("category", document.getElementById("categorie").value); // catégorie
     const dropzoneBefore = document.getElementById("dropzoneBefore")
 
-
+     
 
     fetch("http://localhost:5678/api/works", {    //Envoyer à l’API
         method: "POST",
@@ -127,6 +127,7 @@ document.getElementById("uploadForm").addEventListener("submit", function (e) {
             document.getElementById("uploadForm").reset();
             previewImage.style.display = "none";
             dropzoneBefore.style.display = "block";
+            validerModal2.classList.remove("active");
         })
         .catch(err => console.error("Erreur :", err));
 });

@@ -455,11 +455,16 @@ button {
 #validerModal2 {
 	display: flex;
 	padding: 0px 200px 0px 150px;
-	background-color: rgb(181, 185, 184)
+	background-color: #B3B3B3
 }
 
 #validerModal2.active {
 	background-color: #1D6154;
+}
+
+#bordureModal2{
+	border: 1px solid#B3B3B3;
+	margin: 20px 0px 40px 0px;
 }
 
 #contact {

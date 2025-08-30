@@ -121,4 +121,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+/****************réinitialisation de la modale 2********************** */
 
+function modaleInit() {
+  document.getElementById("uploadForm").reset();
+  previewImage.style.display = "none";
+  dropzoneBefore.style.display = "block";
+}

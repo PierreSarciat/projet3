@@ -23,7 +23,7 @@ openBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none"
   modal.setAttribute("aria-hidden", "true")
-  /*modal = null*/
+
 })
 
 // Fermer en cliquant sur le fond
@@ -31,7 +31,6 @@ modal.addEventListener("click", (e) => {
   if (e.target === modal) {
     modal.style.display = "none"
     modal.setAttribute("aria-hidden", "true")
-    /*modal = null*/
   }
 })
 
@@ -45,7 +44,6 @@ openModal2.addEventListener("click", () => {
   modal2.setAttribute("aria-hidden", "false")
   modal.style.display = "none"
   modal.setAttribute("aria-hidden", "true ")
- /* modal = null*/
 })
 
 //  fermer 
@@ -53,8 +51,7 @@ openModal2.addEventListener("click", () => {
 closeBtn2.addEventListener("click", () => {
   modal2.style.display = "none"
   modal2.setAttribute("aria-hidden", "true")
-  /*modal2 = null*/
-
+  modaleInit()
 })
 
 // fermer en cliquant à l' exterieur
@@ -63,7 +60,7 @@ modal2.addEventListener("click", (e) => {
   if (e.target === modal2) {
     modal2.style.display = "none"
     modal2.setAttribute("aria-hidden", "true")
-    /*modal2 = null*/
+    modaleInit()
   }
 
 })
@@ -76,7 +73,7 @@ returnModal.addEventListener("click", () => {
   modal2.setAttribute("aria-hidden", "true")
   modal.style.display = "flex"
   modal.setAttribute("aria-hidden", "false")
-  /*modal2 = null*/
+  modaleInit()
 })
 
 

@@ -394,10 +394,9 @@ button {
 }
 
 #previewImage {
-	max-width: 200px;
 	display: none;
-	margin-bottom: 10px;
-	border-radius: 8px;
+	margin: auto;
+	height: 217px;
 }
 
 .dropzone {
@@ -407,20 +406,16 @@ button {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: 1rem;
-	min-height: 160px;
 	padding: 24px;
 	background: #E8F1F6;
 	text-align: center;
 	cursor: pointer;
-	transition: background .2s, border-color .2s, box-shadow .2s;
-	color: #333;
 	margin-top: 30px;
 	margin-bottom: 30px;
+	border-radius: 3px;
 }
 
 #dropzone i {
-	/*icône dans modal2*/
 	font-size: 76px;
 	color: #b1bdc3;
 }
@@ -432,8 +427,8 @@ button {
 	border-color: #b1bdc3;
 	background-color: #b1bdc3;
 	padding: 10px;
-	margin: 0px 80px;
-	border-radius: 25px;
+	margin: 6px 80px;
+	border-radius: 50px;
 }
 
 

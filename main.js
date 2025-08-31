@@ -14,6 +14,10 @@ fetch("http://localhost:5678/api/categories")
         const boutons = document.querySelectorAll(".bouton");    //Ajout d' un écouteur d' évènement click
         boutons.forEach(bouton => {
             bouton.addEventListener("click", () => {
+                document.querySelectorAll(".filtre li").forEach(li => li.classList.remove("active"));
+
+        // 👉 ajoute l'active uniquement au <li> du bouton cliqué
+        bouton.parentElement.classList.add("active");
                 const categoryId = bouton.dataset.id;
                 console.log("Filtrage pour categoryId :", categoryId);
 

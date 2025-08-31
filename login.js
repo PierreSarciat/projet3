@@ -1,5 +1,5 @@
 
-let bouton = document.querySelector("button");
+let bouton = document.getElementById("btnLogin");
 
 bouton.addEventListener("click", (event) => {
     event.preventDefault();

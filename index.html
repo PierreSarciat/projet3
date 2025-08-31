@@ -71,10 +71,10 @@
 
 
 
-			<aside id="myModal" class="modal" aria-hidden="true" aria-labelledby="titlemodal">
+			<aside id="myModal" class="modal" aria-hidden="true" aria-labelledby="titlemodal1">
 				<div class="modal-content">
 					<span id="closeModal" class="close">&times;</span>
-					<h2 id="titlemodal">Galerie photo</h2>
+					<h2 id="titlemodal1">Galerie photo</h2>
 					<div class="galleryModal">
 					</div>
 					<input type="submit" id="ajouterPhoto" value="Ajouter une photo">
@@ -83,31 +83,34 @@
 
 			<!---fenetre modale 2-->
 
-			<aside id="myModal2" class="modal2" aria-hidden="true" aria-labelledby="titlemodal">
+			<aside id="myModal2" class="modal2" aria-hidden="true" aria-labelledby="titlemodal2">
 				<div class="modal2-content">
 					<span id="returnModal" class="return"><i class="fa-solid fa-arrow-left"></i></span>
 					<span id="closeModal2" class="close2">&times;</span>
-					<h2 id="titlemodal">Ajout photo</h2>
+					<h2 id="titlemodal2">Ajout photo</h2>
 					<form id="uploadForm">
 						<label for="photo" class="dropzone" id="dropzone">
-							<div id="previewContainer">
-								<img id="previewImage" src="" alt="Aperçu de l'image">
-							</div>
-							<div id="dropzoneBefore">
+							<span id="previewContainer">
+								<img id="previewImage"
+									src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+									alt="Aperçu de l'image">
+
+							</span>
+							<span id="dropzoneBefore">
 								<i class="fa-regular fa-image"></i>
-								<p id="ajouterPhoto2">+Ajouter une photo</p>
+								<span id="ajouterPhoto2">+Ajouter une photo</span>
 								<input type="file" id="photo" name="image" accept=".jpg,.png" required hidden>
-								<p>jpg, png : 4mo max</p>
-							</div>
+								<span id="valTol">jpg, png : 4mo max</span>
+							</span>
 						</label>
 						<label>Titre</label>
 						<input type="text" id="titre" name="title" placeholder="" required>
 						<label for="categorie">Catégorie</label>
 						<select id="categorie" name="category" required>
-							<option></option>
+							<option value=""  label=" " hidden></option>
 						</select>
 						<div id="bordureModal2"></div>
-						
+
 						<input type="submit" id="validerModal2" value="Valider">
 
 					</form>

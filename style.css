@@ -151,7 +151,6 @@ header {
 
 #modeEdition {
 	display: none;
-	border: 1px solid black;
 	text-align: center;
 	padding: 16px;
 	color: white;
@@ -305,10 +304,8 @@ li a:hover {
 
 .modal-content h2,
 .modal2-content h2 {
-
-
 	text-align: center;
-	font-family: Work Sans;
+	font-family: "Work Sans";
 	color: black;
 	font-size: 26px;
 }
@@ -429,8 +426,6 @@ button {
 #ajouterPhoto2 {
 	font-weight: bold;
 	color: #5e78858a;
-	border: 1px solid;
-	border-color: #b1bdc3;
 	background-color: #b1bdc3;
 	padding: 10px;
 	margin: 6px 80px;
@@ -469,7 +464,7 @@ button {
 	background-color: #1D6154;
 }
 
-#bordureModal2{
+#bordureModal2 {
 	border: 1px solid#B3B3B3;
 	margin: 20px 0px 40px 0px;
 }
@@ -558,11 +553,9 @@ body.pageFormulaire {
 
 
 form+button {
-	border: 1px solid #D9D9D9;
 	padding: 13px 60px;
 	border-radius: 20px;
 	color: #1D6154;
-	border-color: #1D6154;
 	font-size: 1.2em;
 	color: white;
 	background-color: #1D6154;

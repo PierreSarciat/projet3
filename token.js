@@ -4,7 +4,6 @@ const affichageFiltre = document.querySelector(".filtre")
 const logInOut = document.getElementById("logInOut")
 
 const token = localStorage.getItem("token");
-/*const adminBtn = document.getElementById("admin-btn");*/
 
 function changeInOut(e) {
     e.preventDefault()

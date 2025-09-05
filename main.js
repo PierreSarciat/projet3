@@ -19,7 +19,7 @@ fetch("http://localhost:5678/api/categories")
                 bouton.parentElement.classList.add("active");
 
                 const categoryId = bouton.dataset.id;
-                console.log("Filtrage pour categoryId :", categoryId);
+               /* console.log("Filtrage pour categoryId :", categoryId);*/
 
                 const figures = document.querySelectorAll(".gallery figure");   //Filtrage dynamique
                 figures.forEach(figure => {
@@ -48,11 +48,6 @@ fetch("http://localhost:5678/api/categories")
         });
     })
     .catch(err => console.log("Erreur chargement filtres :", err));
-/* })
-
- .catch(err => console.error("Erreur chargement catégories :", err));*/
-
-
 
 
 
@@ -63,7 +58,7 @@ fetch("http://localhost:5678/api/categories")
 fetch("http://localhost:5678/api/works")
     .then(res => res.json())
     .then(data => {
-        console.log("Données reçues :", data);
+        /*console.log("Données reçues :", data);*/
         loadGallery(data)
         if (token) {
             loadGalleryModal(data)
@@ -80,7 +75,7 @@ document.querySelector(".galleryModal").addEventListener("click", (e) => {
     if (e.target.classList.contains("delete-icon")) {
         const figure = e.target.closest("figure");
         const id = figure.dataset.id;
-        console.log("ID :", id);
+        /*console.log("ID :", id);*/
         deleteWork(id, figure);
     }
 });
@@ -118,7 +113,7 @@ document.getElementById("uploadForm").addEventListener("submit", function (e) {
             return res.json();
         })
         .then(newWork => {
-            console.log("Travail ajouté :", newWork);
+            /*console.log("Travail ajouté :", newWork);*/
             return fetch("http://localhost:5678/api/works")  // Recharger la galerie depuis l’API
                 .then(res => res.json())
                 .then(data => {

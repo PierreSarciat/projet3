@@ -287,6 +287,7 @@ li a:hover {
 }
 
 /* Contenu de la modale */
+
 .modal-content,
 .modal2-content {
 	display: flex;
@@ -311,6 +312,7 @@ li a:hover {
 }
 
 /* Bouton de fermeture */
+
 .close {
 	position: absolute;
 	top: 10px;
@@ -525,6 +527,7 @@ footer nav ul {
 
 
 /******Formulaire*******************/
+
 body.pageFormulaire {
 	margin: auto;
 	background-color: #FFFEF8;

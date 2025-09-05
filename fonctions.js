@@ -36,7 +36,7 @@ function loadGalleryModal(data) {
             
         </figure>`;
   }
-  console.log(display);
+  /*console.log(display);*/
   document.querySelector(".galleryModal").innerHTML = display;
 
   // écouteurs sur icones
@@ -45,7 +45,7 @@ function loadGalleryModal(data) {
     icon.addEventListener("click", (e) => {
       const figure = e.target.closest("figure");
       const id = figure.dataset.id;
-      console.log("ID à supprimer :", id);
+      /*console.log("ID à supprimer :", id);*/
 
 
     });
@@ -67,11 +67,11 @@ function deleteWork(id, elem) {
       if (!response.ok) {
         throw new Error("Erreur lors de la suppression");
       }
-      console.log("Travail supprimé avec succès !");
-      /*document.querySelector(`figure[data-id="${id}"]`).remove();*/
+      /*console.log("Suppression ok");*/
       elem.remove();
 
-      // ✅ Recharger la galerie depuis l’API
+      /***********Recharger la galerie depuis l’API****************************/
+
       return fetch("http://localhost:5678/api/works")
         .then(res => res.json())
         .then(data => {
@@ -93,17 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const validerModal2 = document.getElementById("validerModal2");
 
   function styleBtnValider() {
-    console.log(
-      "check:",
-      photoModal2.files.length,
-      titreModal2.value,
-      categorieModal2.value
-    ); // debug
-
     if (
-      photoModal2.files.length > 0 &&          // fichier choisi
-      titreModal2.value.trim() !== "" &&       // titre rempli
-      categorieModal2.value.trim() !== ""      // catégorie sélectionnée
+      photoModal2.files.length > 0 &&
+      titreModal2.value.trim() !== "" &&
+      categorieModal2.value.trim() !== ""
     ) {
       validerModal2.classList.add("active");
     } else {
@@ -111,12 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Vérification en temps réel
+
   photoModal2.addEventListener("change", styleBtnValider);
   titreModal2.addEventListener("input", styleBtnValider);
   categorieModal2.addEventListener("change", styleBtnValider);
 
-  // Vérifie aussi dès le chargement
+
   styleBtnValider();
 });
 
